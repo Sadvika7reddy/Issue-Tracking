@@ -2,6 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import classNames from 'classnames';
 const Navbar = () => {
     const currentPath=usePathname();
     const links=[
@@ -13,7 +14,8 @@ const Navbar = () => {
         <Link href='/'>Logo</Link>
         <ul className='flex space-x-6'>
             {links.map(link=>
-                  <Link key='link.href' className={`${link.href===currentPath?'text-zinc-900':'text-zinc-500'} hover:text-zinc-800`}
+                  <Link key='link.href' 
+                  className={`${link.href===currentPath?'text-zinc-900':'text-zinc-500'} hover:text-zinc-800`}
                    href={link.href}>{link.label}</Link>
             )}
             
